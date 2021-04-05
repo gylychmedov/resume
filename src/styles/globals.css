@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-Medium.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Kenfolg";
+  src: url("fonts/Kenfolg.otf");
+  font-display: swap;
+}
+
+.gilroy {
+  font-family: Gilroy;
+}
+
+.kenfolg {
+  font-family: Kenfolg;
+}
+
+* {
+  font-family: Gilroy;
+}
+nav a,
+nav {
+  font-size: 28px;
+  font-family: Kenfolg;
+}
+.b-blue {
+  /* background: #e6ceb7; */
+  background: #f3d5ad;
+}
