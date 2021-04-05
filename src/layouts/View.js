@@ -1,8 +1,11 @@
 import Link from "next/link";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectCoverflow, Autoplay } from "swiper";
 
 const View = ({ children }) => {
+  const SwipeNext = useRef(null);
+  const SwipePrev = useRef(null);
   SwiperCore.use([EffectCoverflow, Autoplay]);
   return (
     <main className="h-screen flex">
@@ -15,34 +18,8 @@ const View = ({ children }) => {
           autoplay={{ delay: 3000 }}
           centeredSlides={true}
           slidesPerView="auto"
-          // coverflowEffect={{
-          //   rotate: 50,
-          //   stretch: 0,
-          //   depth: 100,
-          //   modifier: 1,
-          //   slideShadows: true,
-          // }}
-          pagination={{
-            el: ".swiper-pagination",
-          }}
           className="h-screen px-12"
         >
-          {/* //   // direction="vertical"
-        //   slidesPerView="2"
-        //   effect="coverflow"
-        //   loop={true}
-        //   centeredSlides={true}
-        //   breakpoints={{
-        //     640: {
-        //       width: 640,
-        //       slidesPerView: 1,
-        //     },
-        //     768: {
-        //       width: 768,
-        //       slidesPerView: 2,
-        //     },
-        //   }}
-        // > */}
           <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
             <img src="/1.png" alt="slide" className="w-12/12" />
           </SwiperSlide>
