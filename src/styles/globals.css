@@ -24,12 +24,18 @@
 * {
   font-family: Gilroy;
 }
+
 nav a,
 nav {
   font-size: 28px;
   font-family: Kenfolg;
 }
-.b-blue {
+.b-yellow {
   /* background: #e6ceb7; */
-  background: #f3d5ad;
+  /* background: #f3d5ad; */
+  background: #0d1117;
+}
+
+.bg-blur {
+  backdrop-filter: blur(5px) brightness(5);
 }
