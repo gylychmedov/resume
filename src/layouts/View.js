@@ -13,7 +13,7 @@ const View = ({ children }) => {
   SwiperCore.use([EffectCoverflow, Autoplay]);
   return (
     <main className="h-screen flex">
-      <section className=" w-2/6 h-full bg-gray-100 dark:bg-gray-900 relative">
+      <section className=" w-2/6 h-full bg-gray-200 dark:bg-gray-900 relative">
         <aside className="flex justify-between items-center bg-blur absolute z-10 left-0 right-0 py-3 bg-white dark:bg-gray-700 bg-opacity-60">
           <div className=" ml-2 hover:bg-white hover:text-dark  duration-700 ease-in-out hover:text-gray-900 py-2 flex items-center px-3 rounded-full bg-opacity-60 font-bold cursor-pointer z-10">
             <HiHome size={18} />
@@ -74,7 +74,7 @@ const View = ({ children }) => {
         </Swiper>
       </section>
 
-      <section className="w-4/6 flex flex-col bg-white dark:bg-gray-700 relative">
+      <section className="w-4/6 flex flex-col bg-gray-100 dark:bg-gray-700 relative">
         <img
           src="/circle.svg"
           width="36px"

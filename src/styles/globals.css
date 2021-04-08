@@ -39,3 +39,12 @@ nav {
 .bg-blur {
   backdrop-filter: blur(5px) brightness(5);
 }
+
+.text-stroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #313131;
+  -webkit-text-fill-color: white;
+}
+.text-stroke:hover {
+  -webkit-text-fill-color: #313131;
+}
