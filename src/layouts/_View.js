@@ -7,20 +7,9 @@ import { FaGlobe, FaPenNib } from "react-icons/fa";
 import { useTheme } from "next-themes";
 import { BsMoon } from "react-icons/bs";
 import { IoMdSunny } from "react-icons/io";
-import Project from "../components/project";
 
-const Home = (props) => {
+const View = ({ children }) => {
   const { theme, setTheme } = useTheme();
-  const data = [
-    {
-      name: "Dagdam",
-      age: 22,
-    },
-    {
-      name: "Atabek",
-      age: 24,
-    },
-  ];
   SwiperCore.use([EffectCoverflow, Autoplay]);
   return (
     <main className="h-screen flex">
@@ -92,12 +81,10 @@ const Home = (props) => {
           className="absolute -left-9 top-14 z-20"
         />
 
-        <main className="mt-2">
-          <Project project={data} />
-        </main>
+        <main className="mt-2">{children}</main>
       </section>
     </main>
   );
 };
 
-export default Home;
+export default View;
