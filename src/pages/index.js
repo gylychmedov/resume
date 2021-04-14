@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectCoverflow, Autoplay } from "swiper";
 import { HiDeviceMobile, HiHome } from "react-icons/hi";
@@ -8,9 +8,17 @@ import { useTheme } from "next-themes";
 import { BsMoon } from "react-icons/bs";
 import { IoMdSunny } from "react-icons/io";
 import Project from "../components/project";
+import axios from "axios";
 
 const Home = (props) => {
   const { theme, setTheme } = useTheme();
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  const handleClick = async (id) => {
+    const data = await axios.get(
+      `http://jsonplaceholder.typicode.com/posts/${id}`
+    );
+  };
   const data = [
     {
       name: "Dagdam",
@@ -65,6 +73,7 @@ const Home = (props) => {
           autoplay={{ delay: 3000 }}
           centeredSlides={true}
           slidesPerView="auto"
+          onSlideChange={(event) => console.log(event.realIndex)}
           className="h-screen px-12"
         >
           <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">

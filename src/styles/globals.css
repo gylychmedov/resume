@@ -13,6 +13,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Mackay";
+  src: url("fonts/Mackay.otf");
+  font-display: swap;
+}
+
 .gilroy {
   font-family: Gilroy;
 }
@@ -22,9 +28,12 @@
 }
 
 * {
-  font-family: Gilroy;
+  font-family: Mackay;
 }
-
+.text-spacing {
+  word-spacing: 10px;
+  line-height: 60px !important;
+}
 nav a,
 nav {
   font-size: 28px;
