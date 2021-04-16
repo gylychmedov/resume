@@ -11,7 +11,7 @@ export default function Project(props) {
           <section className="mt-10">
             <h2 className=" px-5 text-9xl font-bold w-full">Google</h2>
             <aside className="mt-3 dark:bg-gray-700">
-              <div className="grid grid-cols-1 p-5 text-5xl rounded-7xl w-12/12 text-spacing">
+              <div className="w-full p-5 text-5xl rounded-7xl text-spacing break-words">
                 Founded to make easy and fun to search your needs and sa asdkja
                 asdlaj as asd. Founded to make easy and fun to search your needs
                 and sa asdkja asdlaj as asd
@@ -20,9 +20,9 @@ export default function Project(props) {
           </section>
           <main>
             <h2 className="text-4xl px-5 font-bold w-full">Our tools</h2>
-            <section className="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-2">
+            <section className="mt-2 w-full">
               <Swiper
-                className="p-8"
+                className="p-8 w-full"
                 breakpoints={{
                   400: {
                     slidesPerView: 2,

@@ -29,6 +29,7 @@
 
 * {
   font-family: Mackay;
+  user-select: none;
 }
 .text-spacing {
   word-spacing: 10px;
