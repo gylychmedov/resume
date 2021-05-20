@@ -4,17 +4,17 @@ import Home from "./home";
 
 export default function Project(props) {
   const { project } = props;
+  console.log(props);
   return (
     <main>
       {project ? (
         <main className=" min-h-screen p-5 flex flex-col justify-between">
           <section className="mt-10">
-            <h2 className=" px-5 text-9xl font-bold w-full">Google</h2>
+            {JSON.stringify(project)}
+            <h2 className=" px-5 text-9xl font-bold w-full">{project.name}</h2>
             <aside className="mt-3 dark:bg-gray-700">
               <div className="w-full p-5 text-5xl rounded-7xl text-spacing break-words">
-                Founded to make easy and fun to search your needs and sa asdkja
-                asdlaj as asd. Founded to make easy and fun to search your needs
-                and sa asdkja asdlaj as asd
+                {project.description}
               </div>
             </aside>
           </section>

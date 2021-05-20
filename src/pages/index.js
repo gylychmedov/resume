@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectCoverflow, Autoplay } from "swiper";
 import { HiDeviceMobile, HiHome } from "react-icons/hi";
@@ -7,27 +7,19 @@ import { useTheme } from "next-themes";
 import { BsMoon } from "react-icons/bs";
 import { IoMdSunny } from "react-icons/io";
 import Project from "../components/project";
-import axios from "axios";
+import { http } from "../components/api";
 
 const Home = (props) => {
   const { theme, setTheme } = useTheme();
+  const [projects, setProjects] = useState([]);
   const [slideIndex, setSlideIndex] = useState(0);
 
-  const handleClick = async (id) => {
-    const data = await axios.get(
-      `http://jsonplaceholder.typicode.com/posts/${id}`
-    );
-  };
-  const data = [
-    {
-      name: "Dagdam",
-      age: 22,
-    },
-    {
-      name: "Atabek",
-      age: 24,
-    },
-  ];
+  useEffect(() => {
+    http.get("projects").then((res) => setProjects(res.data.data));
+  }, []);
+
+  console.log(projects);
+
   SwiperCore.use([EffectCoverflow, Autoplay]);
   return (
     <main className="h-screen flex ">
@@ -40,24 +32,21 @@ const Home = (props) => {
           autoplay={{ delay: 3000 }}
           centeredSlides={true}
           slidesPerView="auto"
-          onSlideChange={(event) => console.log(event.realIndex)}
+          onSlideChange={(event) => setSlideIndex(event.realIndex)}
           className="h-screen px-12"
         >
-          <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
-            <img src="/1.png" alt="slide" className="w-12/12" />
-          </SwiperSlide>
-          <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
+          {projects.map((detail) => (
+            <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
+              <img
+                src="https://oguzly.com/assets/images/tools/Laravel_1621286619.webp"
+                alt="slide"
+                className="w-12/12"
+              />
+            </SwiperSlide>
+          ))}
+          {/* <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
             <img src="/2.png" alt="slide" className="w-12/12" />
-          </SwiperSlide>
-          <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
-            <img src="/3.png" alt="slide" className="w-12/12" />
-          </SwiperSlide>
-          <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
-            <img src="/4.png" alt="slide" className="w-12/12" />
-          </SwiperSlide>
-          <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
-            <img src="/5.png" alt="slide" className="w-12/12" />
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </section>
 
@@ -70,7 +59,7 @@ const Home = (props) => {
           >
             {theme === "dark" ? <IoMdSunny size={24} /> : <BsMoon size={24} />}
           </div>
-          <Project project={data} />
+          <Project project={projects} id={slideIndex} />
         </main>
       </section>
     </main>
