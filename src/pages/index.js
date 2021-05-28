@@ -26,7 +26,7 @@ const Home = (props) => {
 
   SwiperCore.use([EffectCoverflow, Autoplay]);
   return (
-    <main className="h-screen flex ">
+    <main className="h-screen flex flex-wrap">
       <section className="hidden md:block w-2/6 h-full bg-gray-200 dark:bg-gray-900 relative">
         <Swiper
           effect="coverflow"
@@ -34,11 +34,39 @@ const Home = (props) => {
           // loop={true}
           // loopedSlides={projects.length}
           direction="vertical"
-          autoplay={{ delay: 3000 }}
+          autoplay={{ delay: 5000 }}
           centeredSlides={true}
           slidesPerView="auto"
           onSlideChange={(event) => setSlideIndex(event.realIndex)}
-          className="h-screen px-12"
+          className="h-screen px-12 hidden md:block"
+        >
+          {projects &&
+            projects.map((project) => {
+              return (
+                <SwiperSlide className="hidden md:block flex justify-center items-center w-auto h-auto m-1">
+                  <img
+                    src={project.image}
+                    alt="slide"
+                    className="w-full h-64 object-cover hidden md:block"
+                  />
+                </SwiperSlide>
+              );
+            })}
+        </Swiper>
+      </section>
+
+      <section className="md:hidden w-full h-auto bg-gray-200 dark:bg-red-900">
+        <Swiper
+          // effect="coverflow"
+          // grabCursor={true}
+          // loop={true}
+          // loopedSlides={projects.length}
+          // direction="vertical"
+          autoplay={{ delay: 5000 }}
+          // centeredSlides={true}
+          slidesPerView="1"
+          onSlideChange={(event) => setSlideIndex(event.realIndex)}
+          // className=" w-full"
         >
           {projects &&
             projects.map((project) => {
@@ -47,7 +75,7 @@ const Home = (props) => {
                   <img
                     src={project.image}
                     alt="slide"
-                    className="w-full h-64 object-cover"
+                    className="w-full h-96 bg-white object-cover"
                   />
                 </SwiperSlide>
               );

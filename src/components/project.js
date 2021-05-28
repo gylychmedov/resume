@@ -6,29 +6,42 @@ import { useEffect } from "react";
 
 export default function Project(props) {
   useEffect(() => {
-    gsap.from(".title", { y: -50, opacity: 0, duration: 1 });
-    // gsap.from(".text", { y: 50, scale: 0.5, opacity: 0, duration: 1 });
+    gsap.from(".title", {
+      y: "-100%",
+      duration: 1,
+      opacity: 0,
+      skewX: 15,
+    });
+    gsap.to(".title", { y: 0, duration: 1, opacity: 1, skewX: 0 });
+
+    gsap.from(".text", {
+      y: "100%",
+      duration: 1,
+      opacity: 0,
+      scale: 0.9,
+    });
+    gsap.to(".text", { y: 0, duration: 1, opacity: 1, scale: 1 });
   }, [props]);
   return (
     <main>
       {props.project ? (
-        <main className=" min-h-screen p-5 flex flex-col justify-between">
+        <main className="w-6/6 md:min-h-screen p-5 flex flex-col justify-between">
           <section className="mt-10">
-            <h2 className="relative px-5 text-9xl font-bold w-full title overflow-hidden">
-              <div className="absolute w-full h-full bg-white text-object"></div>
-              {props.project.name}
+            <h2 className="px-5 text-3xl xl:text-9xl font-bold overflow-hidden">
+              <div className="title"> {props.project.name}</div>
             </h2>
             <aside className="mt-3 dark:bg-gray-700">
-              <div className="w-full p-5 text-5xl rounded-7xl text-spacing break-words text">
+              <div className="p-5 text-xl xl:text-5xl rounded-7xl text">
                 {props.project.description}
               </div>
             </aside>
           </section>
-          <main>
+          {/* <main className="w-6/12">
             <h2 className="text-4xl px-5 font-bold w-full">Our tools</h2>
-            <section className="mt-2 w-full">
+            <section className="mt-2">
               <Swiper
-                className="p-8 w-full"
+                className="xl:p-8"
+             
                 breakpoints={{
                   400: {
                     slidesPerView: 2,
@@ -58,7 +71,7 @@ export default function Project(props) {
                 </SwiperSlide>
               </Swiper>
             </section>
-          </main>
+          </main> */}
         </main>
       ) : (
         <Home />
