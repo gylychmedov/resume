@@ -10,10 +10,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
+          <title>Oguzly</title>
+          <meta name="description" content="Oguzly - Täze nesil" />
         </Head>
         <body>
           <Main />

@@ -1,20 +1,26 @@
 import Tool from "../components/tool";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Home from "./home";
+import { gsap } from "gsap/dist/gsap";
+import { useEffect } from "react";
 
 export default function Project(props) {
-  const { project } = props;
-  console.log(props);
+  useEffect(() => {
+    gsap.from(".title", { y: -50, opacity: 0, duration: 1 });
+    // gsap.from(".text", { y: 50, scale: 0.5, opacity: 0, duration: 1 });
+  }, [props]);
   return (
     <main>
-      {project ? (
+      {props.project ? (
         <main className=" min-h-screen p-5 flex flex-col justify-between">
           <section className="mt-10">
-            {JSON.stringify(project)}
-            <h2 className=" px-5 text-9xl font-bold w-full">{project.name}</h2>
+            <h2 className="relative px-5 text-9xl font-bold w-full title overflow-hidden">
+              <div className="absolute w-full h-full bg-white text-object"></div>
+              {props.project.name}
+            </h2>
             <aside className="mt-3 dark:bg-gray-700">
-              <div className="w-full p-5 text-5xl rounded-7xl text-spacing break-words">
-                {project.description}
+              <div className="w-full p-5 text-5xl rounded-7xl text-spacing break-words text">
+                {props.project.description}
               </div>
             </aside>
           </section>

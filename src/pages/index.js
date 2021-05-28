@@ -13,12 +13,16 @@ const Home = (props) => {
   const { theme, setTheme } = useTheme();
   const [projects, setProjects] = useState([]);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [count, setCount] = useState();
 
   useEffect(() => {
-    http.get("projects").then((res) => setProjects(res.data.data));
+    http
+      .get("projects")
+      .then(
+        (res) => (setProjects(res.data.data), setCount(res.data.data.length))
+      );
   }, []);
-
-  console.log(projects);
+  console.log(count);
 
   SwiperCore.use([EffectCoverflow, Autoplay]);
   return (
@@ -27,7 +31,8 @@ const Home = (props) => {
         <Swiper
           effect="coverflow"
           grabCursor={true}
-          loop={true}
+          // loop={true}
+          // loopedSlides={projects.length}
           direction="vertical"
           autoplay={{ delay: 3000 }}
           centeredSlides={true}
@@ -35,18 +40,18 @@ const Home = (props) => {
           onSlideChange={(event) => setSlideIndex(event.realIndex)}
           className="h-screen px-12"
         >
-          {projects.map((detail) => (
-            <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
-              <img
-                src="https://oguzly.com/assets/images/tools/Laravel_1621286619.webp"
-                alt="slide"
-                className="w-12/12"
-              />
-            </SwiperSlide>
-          ))}
-          {/* <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
-            <img src="/2.png" alt="slide" className="w-12/12" />
-          </SwiperSlide> */}
+          {projects &&
+            projects.map((project) => {
+              return (
+                <SwiperSlide className="flex justify-center items-center w-auto h-auto m-1">
+                  <img
+                    src={project.image}
+                    alt="slide"
+                    className="w-full h-64 object-cover"
+                  />
+                </SwiperSlide>
+              );
+            })}
         </Swiper>
       </section>
 
@@ -59,7 +64,7 @@ const Home = (props) => {
           >
             {theme === "dark" ? <IoMdSunny size={24} /> : <BsMoon size={24} />}
           </div>
-          <Project project={projects} id={slideIndex} />
+          <Project project={projects[slideIndex]} id={slideIndex} />
         </main>
       </section>
     </main>
