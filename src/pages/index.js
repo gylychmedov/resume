@@ -64,7 +64,7 @@ const Home = (props) => {
           // direction="vertical"
           autoplay={{ delay: 5000 }}
           // centeredSlides={true}
-          slidesPerView="1"
+          slidesPerView={1}
           onSlideChange={(event) => setSlideIndex(event.realIndex)}
           // className=" w-full"
         >
