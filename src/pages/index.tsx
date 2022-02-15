@@ -55,9 +55,10 @@ const App = () => {
                 <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700">
                   Experience
                 </h1>
-                {data?.experiences.map((experience) => {
+                {data?.experiences.map((experience, key) => {
                   return (
                     <Experience
+                      key={key}
                       company={experience.company}
                       level={experience.level}
                       date={experience.date}
@@ -72,9 +73,9 @@ const App = () => {
                 Skills
               </h1>
               <div className="grid grid-cols-12 gap-3 xl:gap-5">
-                {data?.skills.map((skill, index) => {
+                {data?.skills.map((skill, key) => {
                   return (
-                    <Skill key={index} title={skill.title} year={skill.year} />
+                    <Skill key={key} title={skill.title} year={skill.year} />
                   );
                 })}
               </div>
