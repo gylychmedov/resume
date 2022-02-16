@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import Skill from "@/components/Skill/Skill";
 import { IData } from "@/interfaces/IData";
 import { getData } from "@/services/getData";
+import { NextSeo } from "next-seo";
 import { useState, useEffect } from "react";
 
 const App = () => {
@@ -14,12 +15,31 @@ const App = () => {
   }, []);
   return (
     <>
+      <NextSeo
+        title="Dagdan Gylychmedov - Resume"
+        description="My name is Dagdan. I am Frontend developer"
+        openGraph={{
+          url: "https://dagdan.vercel.app",
+          title: "Dagdan Gylychmedov - Resume",
+          description: "My name is Dagdan. I am Frontend developer",
+          images: [
+            {
+              url: "https://dagdan.vercel.app/images/Dagdan.jpg",
+              width: 800,
+              height: 600,
+              alt: "Photo",
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "Dagdan Gylychmedov - Resume",
+        }}
+      />
       <section className=" flex flex-col items-center px-2 xl:px-10 font-montserrat-medium">
         <main className="container grid grid-cols-12 gap-5 mx-auto">
           <Header />
 
           <aside className="col-span-12 lg:col-span-7 2xl:col-span-8 xl:px-5 font-montserrat-medium">
-            <section className="bg-gray-50 rounded-xl p-4 my-4  border border-gray-100">
+            <section className="bg-gray-50 rounded-xl p-4 border border-gray-100 mt-5">
               <h1 className="text-lg lg:text-2xl uppercase font-montserrat-bold text-gray-700">
                 About
               </h1>
@@ -32,22 +52,46 @@ const App = () => {
                 <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700">
                   Languages
                 </h1>
-                <aside className="grid grid-cols-2">
-                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg mr-3 mt-3">
-                    <img src={`/images/Languages/tm.png`} className="h-12" />
-                    <p className="font-montserrat-medium mt-2">Turkmen</p>
-                  </div>
-                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg mr-3 mt-3">
-                    <img src={`/images/Languages/ru.png`} className="h-12" />
+                <aside className="grid grid-cols-2 gap-2 xl:gap-4">
+                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg">
+                    <img
+                      src={`/images/Languages/ru.png`}
+                      alt="Russian"
+                      width="48px"
+                      height="48px"
+                    />
                     <p className="font-montserrat-medium mt-2">Russian</p>
+                    <small className="text-gray-500">B1</small>
                   </div>
-                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg mr-3 mt-3">
-                    <img src={`/images/Languages/en.png`} className="h-12" />
+                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg">
+                    <img
+                      src={`/images/Languages/en.png`}
+                      alt="English"
+                      width="48px"
+                      height="48px"
+                    />
                     <p className="font-montserrat-medium mt-2">English</p>
+                    <small className="text-gray-500">A1</small>
                   </div>
-                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg mr-3 mt-3">
-                    <img src={`/images/Languages/tr.png`} className="h-12" />
+                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg">
+                    <img
+                      src={`/images/Languages/tm.png`}
+                      alt="Turkmen"
+                      width="48px"
+                      height="48px"
+                    />
+                    <p className="font-montserrat-medium mt-2">Turkmen</p>
+                    <small className="text-gray-500">C1</small>
+                  </div>
+                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg">
+                    <img
+                      src={`/images/Languages/tr.png`}
+                      alt="Turkish"
+                      width="48px"
+                      height="48px"
+                    />
                     <p className="font-montserrat-medium mt-2">Turkish</p>
+                    <small className="text-gray-500">B2</small>
                   </div>
                 </aside>
               </section>
@@ -68,8 +112,8 @@ const App = () => {
               </section>
             </main>
 
-            <section className="bg-gray-50 rounded-xl p-4 mt-2  border border-gray-100">
-              <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700 mt-5">
+            <section className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+              <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700">
                 Skills
               </h1>
               <div className="grid grid-cols-12 gap-3 xl:gap-5">
@@ -80,10 +124,9 @@ const App = () => {
                 })}
               </div>
             </section>
+            <Footer />
           </aside>
         </main>
-
-        <Footer />
       </section>
     </>
   );
