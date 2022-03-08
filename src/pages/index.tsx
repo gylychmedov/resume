@@ -1,5 +1,6 @@
 import Experience from "@/components/Experience/Experience";
 import Footer from "@/components/Footer/Footer";
+import Repositories from "@/components/Github/Repositories";
 import Header from "@/components/Header/Header";
 import Skill from "@/components/Skill/Skill";
 import { IData } from "@/interfaces/IData";
@@ -112,7 +113,7 @@ const App = () => {
               </section>
             </main>
 
-            <section className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+            <section className="bg-gray-50 rounded-xl p-4 border border-gray-100 mb-4">
               <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700">
                 Skills
               </h1>
@@ -123,6 +124,12 @@ const App = () => {
                   );
                 })}
               </div>
+            </section>
+            <section className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+              <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700">
+                Github public repositories
+              </h1>
+              <Repositories />
             </section>
             <Footer />
           </aside>
