@@ -14,7 +14,7 @@ const Repository = ({ data }: { data: IRepository }) => {
     html_url,
   } = data;
   return (
-    <aside className="bg-white group shadow-xl flex flex-col shadow-gray-100 col-span-12 sm:col-span-6 lg:col-span-6 2xl:col-span-4 p-4 hover:bg-indigo-50 hover:scale-95 select-none duration-500 rounded-lg">
+    <aside className="bg-white group shadow-xl flex flex-col shadow-gray-100 col-span-12 sm:col-span-6 lg:col-span-4 2xl:col-span-4 p-4 hover:bg-indigo-50 hover:scale-95 select-none duration-500 rounded-lg">
       <a
         href={owner.html_url}
         target="_blank"
