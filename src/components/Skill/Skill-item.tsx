@@ -1,7 +1,7 @@
 import React from "react";
 import { ISkill } from "../../interfaces/ISkill";
 
-const Skill = ({ title, year }: ISkill) => {
+const SkillItem = ({ title, year }: ISkill) => {
   return (
     <aside className="bg-white  shadow-xl shadow-gray-100 col-span-12 sm:col-span-6 lg:col-span-6 2xl:col-span-4 space-x-4 2xl:space-x-4  flex items-center p-4 hover:bg-indigo-50 hover:scale-95 cursor-none select-none duration-500 rounded-lg">
       <img
@@ -19,4 +19,4 @@ const Skill = ({ title, year }: ISkill) => {
   );
 };
 
-export default Skill;
+export default SkillItem;

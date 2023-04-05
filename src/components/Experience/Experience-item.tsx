@@ -1,7 +1,12 @@
 import { IExperience } from "../../interfaces/IExperience";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 
-const Experience: React.FC<IExperience> = ({ company, level, date }) => {
+const ExperienceItem: React.FC<IExperience> = ({
+  company,
+  level,
+  date,
+  skills,
+}) => {
   return (
     <aside className="bg-white rounded-xl px-5 py-5 mb-4 last:mb-0 shadow-xl shadow-gray-100">
       <small className="bg-gray-900 text-white px-2 py-1 rounded">{date}</small>
@@ -15,4 +20,4 @@ const Experience: React.FC<IExperience> = ({ company, level, date }) => {
   );
 };
 
-export default Experience;
+export default ExperienceItem;

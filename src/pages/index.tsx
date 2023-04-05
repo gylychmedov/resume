@@ -1,27 +1,20 @@
-import Experience from "@/components/Experience/Experience";
+import Experiences from "@/components/Experience/Experiences";
 import Footer from "@/components/Footer/Footer";
-import Repositories from "@/components/Github/Repositories";
+import GithubRepositories from "@/components/Github/Github-repositories";
 import Header from "@/components/Header/Header";
-import Skill from "@/components/Skill/Skill";
-import { IData } from "@/interfaces/IData";
-import { getData } from "@/services/getData";
+import Language from "@/components/Language/Language";
+import Skills from "@/components/Skill/Skills";
 import { NextSeo } from "next-seo";
-import { useState, useEffect } from "react";
 
 const App = () => {
-  const [data, setData] = useState<IData>();
-
-  useEffect(() => {
-    getData().then((res) => setData(res.data));
-  }, []);
   return (
     <>
       <NextSeo
-        title="Dagdan Gylychmedov - Resume"
+        title="Dagdan Gylychmedov"
         description="My name is Dagdan. I am Frontend developer"
         openGraph={{
           url: "https://dagdan.vercel.app",
-          title: "Dagdan Gylychmedov - Resume",
+          title: "Dagdan Gylychmedov",
           description: "My name is Dagdan. I am Frontend developer",
           images: [
             {
@@ -32,7 +25,7 @@ const App = () => {
               type: "image/jpeg",
             },
           ],
-          site_name: "Dagdan Gylychmedov - Resume",
+          site_name: "Dagdan Gylychmedov",
         }}
       />
       <section className=" flex flex-col items-center px-2 xl:px-10 font-montserrat-medium">
@@ -44,93 +37,19 @@ const App = () => {
               <h1 className="text-lg lg:text-2xl uppercase font-montserrat-bold text-gray-700">
                 About
               </h1>
-              <p className="text-sm lg:text-md text-gray-600">
-                Designer and Frontend developer
+              <p className="text-sm lg:text-md text-gray-600 mt-4">
+                I am Frontend Developer with 4 years experience. Development is
+                both my hobby and job , so even during my non-working hours, I
+                engage in coding and improving my skills.
               </p>
             </section>
             <main className="grid grid-cols-1 2xl:grid-cols-2 gap-4">
-              <section className="bg-gray-50 rounded-xl p-4 my-4  border border-gray-100">
-                <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700">
-                  Languages
-                </h1>
-                <aside className="grid grid-cols-2 gap-2 xl:gap-4">
-                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg">
-                    <img
-                      src={`/images/Languages/ru.png`}
-                      alt="Russian"
-                      width="48px"
-                      height="48px"
-                    />
-                    <p className="font-montserrat-medium mt-2">Russian</p>
-                    <small className="text-gray-500">B1</small>
-                  </div>
-                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg">
-                    <img
-                      src={`/images/Languages/en.png`}
-                      alt="English"
-                      width="48px"
-                      height="48px"
-                    />
-                    <p className="font-montserrat-medium mt-2">English</p>
-                    <small className="text-gray-500">A1</small>
-                  </div>
-                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg">
-                    <img
-                      src={`/images/Languages/tm.png`}
-                      alt="Turkmen"
-                      width="48px"
-                      height="48px"
-                    />
-                    <p className="font-montserrat-medium mt-2">Turkmen</p>
-                    <small className="text-gray-500">C1</small>
-                  </div>
-                  <div className="bg-white shadow-xl shadow-gray-100 flex flex-col items-center justify-center text-center px-4 py-5 rounded-lg">
-                    <img
-                      src={`/images/Languages/tr.png`}
-                      alt="Turkish"
-                      width="48px"
-                      height="48px"
-                    />
-                    <p className="font-montserrat-medium mt-2">Turkish</p>
-                    <small className="text-gray-500">B2</small>
-                  </div>
-                </aside>
-              </section>
-              <section className="bg-gray-50 rounded-xl p-4 my-4  border border-gray-100">
-                <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700">
-                  Experience
-                </h1>
-                {data?.experiences.map((experience, key) => {
-                  return (
-                    <Experience
-                      key={key}
-                      company={experience.company}
-                      level={experience.level}
-                      date={experience.date}
-                    />
-                  );
-                })}
-              </section>
+              <Language />
+              <Experiences />
             </main>
 
-            <section className="bg-gray-50 rounded-xl p-4 border border-gray-100 mb-4">
-              <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700">
-                Skills
-              </h1>
-              <div className="grid grid-cols-12 gap-3 xl:gap-5">
-                {data?.skills.map((skill, key) => {
-                  return (
-                    <Skill key={key} title={skill.title} year={skill.year} />
-                  );
-                })}
-              </div>
-            </section>
-            <section className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-              <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700">
-                Github public repositories
-              </h1>
-              <Repositories />
-            </section>
+            <Skills />
+            <GithubRepositories />
             <Footer />
           </aside>
         </main>
