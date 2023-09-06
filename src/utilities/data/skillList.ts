@@ -9,14 +9,7 @@ const skillList: ISkill[] = [
     title: "TypeScript",
     year: 2,
   },
-  {
-    title: "HTML5",
-    year: 3,
-  },
-  {
-    title: "CSS3",
-    year: 3,
-  },
+
   {
     title: "React",
     year: 3,
@@ -34,10 +27,29 @@ const skillList: ISkill[] = [
     year: 2,
   },
   {
+    title: "HTML5",
+    year: 5,
+  },
+  {
+    title: "CSS3",
+    year: 5,
+  },
+  {
+    title: "Tailwind",
+    year: 3,
+  },
+  {
     title: "REST API",
     year: 3,
   },
-
+  {
+    title: "GraphQL",
+    year: 1,
+  },
+  {
+    title: "Socket",
+    year: 1,
+  },
   {
     title: "React native",
     year: 1,
@@ -48,20 +60,19 @@ const skillList: ISkill[] = [
   },
   {
     title: "Photoshop",
-    year: 2,
+    year: 3,
   },
   {
     title: "Illustrator",
-    year: 2,
+    year: 3,
   },
   {
     title: "Adobe XD",
-    year: 1,
+    year: 2,
   },
-
   {
     title: "Figma",
-    year: 1,
+    year: 2,
   },
 ];
 export default skillList;

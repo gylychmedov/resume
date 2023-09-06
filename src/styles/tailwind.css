@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-roboto-regular select-none;
+  }
+
+  .center-x {
+    @apply flex items-center space-x-2;
+  }
+
+  .center {
+    @apply center-x justify-center;
+  }
+
+  .between {
+    @apply center-x justify-between;
+  }
+
+  .title-xl {
+    @apply font-roboto-bold text-4xl tracking-wide;
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "RobotoSlab-Bold";
+    src: url("/fonts/RobotoSlab-Bold.ttf");
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "RobotoSlab-Regular";
+    src: url("/fonts/RobotoSlab-Regular.ttf");
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "RobotoSlab-Light";
+    src: url("/fonts/RobotoSlab-Light.ttf");
+  }
+}

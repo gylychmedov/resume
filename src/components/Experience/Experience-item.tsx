@@ -1,22 +1,36 @@
 import { IExperience } from "../../interfaces/IExperience";
-import { HiOutlineOfficeBuilding } from "react-icons/hi";
+import { FcCalendar } from "react-icons/fc";
+import { CgBorderStyleDotted } from "react-icons/cg";
 
-const ExperienceItem: React.FC<IExperience> = ({
-  company,
-  level,
-  date,
-  skills,
-}) => {
+const ExperienceItem = ({ experience }: { experience: IExperience }) => {
   return (
-    <aside className="bg-white rounded-xl px-5 py-5 mb-4 last:mb-0 shadow-xl shadow-gray-100">
-      <small className="bg-gray-900 text-white px-2 py-1 rounded">{date}</small>
-      <div className="font-montserrat-bold text-md lg:text-xl text-gray-700 mt-2">
-        {level}
+    <main className="bg-white rounded-xl px-3 py-2 shadow-xl shadow-gray-100 col-span-1 last:xl:col-span-2 center-x space-x-3">
+      <div className="h-full center rounded-xl aspect-square">
+        <img
+          src={`/images/Company/${experience.logo}.png`}
+          className="w-32 p-2"
+          alt=""
+        />
       </div>
-      <div className="text-sm lg:text-md flex items-center mt-1 text-gray-500 space-x-1">
-        <HiOutlineOfficeBuilding /> <span>{company}</span>
-      </div>
-    </aside>
+      <aside className="flex flex-col space-y-2">
+        <h1 className="text-xl font-roboto-bold text-gray-700">
+          {experience.company}
+        </h1>
+
+        <div className="center-x mt-1 text-gray-500">{experience.level}</div>
+        <div className="center-x space-x-3">
+          <div className="text-gray-500 center-x">
+            <FcCalendar />
+            <span>{experience.start_date}</span>
+          </div>
+          <CgBorderStyleDotted size={24} className="text-gray-400" />
+          <div className="text-gray-500 center-x">
+            <FcCalendar />
+            <span>{experience.end_date}</span>
+          </div>
+        </div>
+      </aside>
+    </main>
   );
 };
 

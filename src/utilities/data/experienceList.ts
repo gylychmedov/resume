@@ -2,21 +2,27 @@ import { IExperience } from "@/interfaces/IExperience";
 
 const experienceList: IExperience[] = [
   {
-    company: "ASMAN COMPANY",
+    company: "Asman - Fast delivery",
+    logo: "asman",
     level: "Frontend developer",
-    date: "May 2022 — March 2023",
+    start_date: "May 2022",
+    end_date: "March 2023",
     skills: ["TypeScript"],
   },
   {
-    company: "TURKMENPORTAL",
+    company: "Turkmenportal",
+    logo: "turkmenportal",
     level: "Frontend developer",
-    date: "February 2021 — May 2022",
+    start_date: "February 2021",
+    end_date: "May 2022",
     skills: ["TypeScript"],
   },
   {
-    company: "UCYAP",
+    company: "Ucyap",
+    logo: "ucyap",
     level: "Frontend developer",
-    date: "June 2019 — February 2021",
+    start_date: "June 2019",
+    end_date: "February 2021",
     skills: ["TypeScript", "JavaScript"],
   },
 ];

@@ -40,7 +40,7 @@ const Repository = ({ data }: { data: IRepository }) => {
         className="flex flex-col items-start pt-3 justify-between h-full"
       >
         <div className=" flex flex-col items-start">
-          <p className="font-montserrat-bold">{name}</p>
+          <p className="font-roboto-bold">{name}</p>
           {language && (
             <p className="  font-montserrat-medium text-sm my-2 bg-gray-500 text-white rounded-lg px-2 py-1">
               {language}

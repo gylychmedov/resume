@@ -3,21 +3,20 @@ import ExperienceItem from "./Experience-item";
 
 const Experiences = () => {
   return (
-    <section className="bg-gray-50 rounded-xl p-4 my-4  border border-gray-100">
-      <h1 className="text-lg lg:text-2xl mb-2 lg:mb-5 uppercase font-montserrat-bold text-gray-700">
-        Experience
-      </h1>
-      {experienceList.map((experience) => {
-        return (
-          <ExperienceItem
-            key={experience.date}
-            company={experience.company}
-            level={experience.level}
-            date={experience.date}
-            skills={experience.skills}
-          />
-        );
-      })}
+    <section className="bg-gray-50 w-full py-20">
+      <div className="container">
+        <h1 className="title-xl mb-10 pb-3">Experience</h1>
+        <aside className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+          {experienceList.map((experience) => {
+            return (
+              <ExperienceItem
+                key={experience.company}
+                experience={experience}
+              />
+            );
+          })}
+        </aside>
+      </div>
     </section>
   );
 };
