@@ -3,7 +3,7 @@ import { socialLinks } from "utilities/data/socialLinks";
 
 const About = () => {
   return (
-    <main className="bg-gradient-to-tr from-indigo-100 via-purple-50 to-teal-100 w-full min-h-screen flex items-center">
+    <main className="w-full min-h-screen flex items-center">
       <main className="container py-20 grid grid-cols-12 gap-x-8">
         <section className="col-span-12 md:col-span-7 flex flex-col justify-center">
           {/* Texts */}
@@ -54,40 +54,6 @@ const About = () => {
               className="brightness-110"
             />
           </div>
-          {/* <aside className="font-montserrat-medium text-sm flex justify-between mt-10 flex-col">
-            <aside className="mb-6 flex items-center space-x-3">
-              <div className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-lg">
-                <FaPhoneAlt size={18} />
-              </div>
-              <div className="flex flex-col">
-                <p> Phone: </p>
-                <small className="text-gray-400"> +99361711765 </small>
-              </div>
-            </aside>
-
-            <aside className="mb-6 flex items-center space-x-3">
-              <div className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-lg">
-                <MdEmail size={18} />
-              </div>
-              <div className="flex flex-col">
-                <p> Email: </p>
-                <small className="text-gray-400">Gylycmedof@gmail.com</small>
-              </div>
-            </aside>
-
-
-            <aside className="mb-6 flex items-center space-x-3">
-              <div className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-lg">
-                <MdLocationPin size={18} />
-              </div>
-              <div className="flex flex-col">
-                <p> Location: </p>
-                <small className="text-gray-400">Ashgabat, Turkmenistan</small>
-              </div>
-            </aside>
-
-         
-          </aside> */}
         </section>
       </main>
     </main>

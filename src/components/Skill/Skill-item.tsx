@@ -3,7 +3,7 @@ import { ISkill } from "../../interfaces/ISkill";
 
 const SkillItem = ({ title, year }: ISkill) => {
   return (
-    <aside className="hover:!scale-105 center text-center aspect-square border border-gray-100 flex-col bg-white shadow-xl shadow-gray-100 space-y-6 p-4 duration-500 rounded-3xl">
+    <aside className="hover:!scale-105 center text-center aspect-square border border-gray-100 flex-col bg-white shadow-2xl shadow-gray-200 space-y-6 p-4 duration-500 rounded-3xl">
       <img
         src={`/images/Logos/${title}.png`}
         width="48px"

@@ -28,7 +28,7 @@ const App = () => {
           site_name: "Dagdan Gylychmedov",
         }}
       />
-      <section className="flex flex-col items-center  font-montserrat-medium">
+      <section className="flex flex-col items-center bg-fixed bg-gradient-to-tr from-indigo-100 via-purple-50 to-teal-100 w-full min-h-screen">
         <About />
         <Skills />
         <Language />

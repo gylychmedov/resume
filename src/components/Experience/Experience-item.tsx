@@ -4,7 +4,7 @@ import { CgBorderStyleDotted } from "react-icons/cg";
 
 const ExperienceItem = ({ experience }: { experience: IExperience }) => {
   return (
-    <main className="bg-white rounded-xl px-3 py-2 shadow-xl shadow-gray-100 col-span-1 last:xl:col-span-2 center-x space-x-3">
+    <main className="bg-white rounded-xl px-3 py-2 shadow-xl shadow-gray-200 col-span-1 last:xl:col-span-2 center-x space-x-3">
       <div className="h-full center rounded-xl aspect-square">
         <img
           src={`/images/Company/${experience.logo}.png`}
