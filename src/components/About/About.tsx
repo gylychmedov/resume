@@ -9,13 +9,14 @@ const About = () => {
           {/* Texts */}
           <div>Hello</div>
           <div className="mt-2 title-xl text-gray-800 leading-snug">
-            I'm <span className="text-green-500">Dagdan Gylychmedov </span>
+            I&lsquo;m{" "}
+            <span className="text-green-500">Dagdan Gylychmedov </span>
             Frontend developer
           </div>
           <article className="mt-5 text-gray-600 leading-relaxed text-lg">
-            I'm Frontend Developer with 4 years experience. Development is both
-            my hobby and job , so even during my non-working hours, I engage in
-            coding and improving my skills.
+            I&lsquo;m Frontend Developer with 4 years experience. Development is
+            both my hobby and job, so even during my non-working hours, I engage
+            in coding and improving my skills.
           </article>
 
           {/* Buttons */}
@@ -37,6 +38,7 @@ const About = () => {
                 key={social.link}
                 href={social.link}
                 target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-white text-gray-600 center duration-500 hover:bg-green-500 hover:text-white cursor-pointer"
               >
                 {social.icon}

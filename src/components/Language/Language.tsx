@@ -2,7 +2,7 @@ import { languageList } from "utilities/data/languageList";
 
 const Language = () => {
   return (
-    <section className="bg-gray-50 py-20 w-full">
+    <section className=" py-20 w-full">
       <div className="container">
         <h1 className="title-xl mb-10 pb-3">Languages</h1>
 

@@ -3,7 +3,7 @@ import ExperienceItem from "./Experience-item";
 
 const Experiences = () => {
   return (
-    <section className="bg-gray-50 w-full py-20">
+    <section className=" w-full py-20">
       <div className="container">
         <h1 className="title-xl mb-10 pb-3">Experience</h1>
         <aside className="grid grid-cols-1 xl:grid-cols-2 gap-5">

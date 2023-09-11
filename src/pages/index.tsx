@@ -33,14 +33,6 @@ const App = () => {
         <Skills />
         <Language />
         <Experiences />
-
-        {/* <main className="w-full bg-gradient">
-          <div className="container grid grid-cols-1 xl:grid-cols-2 gap-4 ">
-            <Language />
-            <Experiences />
-          </div>
-        </main> */}
-
         <GithubRepositories />
         <Footer />
       </section>

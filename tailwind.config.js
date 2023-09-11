@@ -1,9 +1,5 @@
 module.exports = {
-  content: [
-    "./src/pages/*.{tsx,ts}",
-    "./src/pages/**/*.{tsx,ts}",
-    "./src/components/**/*.{tsx,ts}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     container: {
       center: true,
